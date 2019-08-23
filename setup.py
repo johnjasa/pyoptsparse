@@ -3,6 +3,8 @@ from __future__ import print_function
 import os
 import sys
 
+os.environ['NPY_DISTUTILS_APPEND_FLAGS'] = '1'
+
 # Check if we have numpy:
 try:
     from numpy.distutils.misc_util import Configuration

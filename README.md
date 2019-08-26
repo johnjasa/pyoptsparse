@@ -1,3 +1,5 @@
+[Forked](https://github.com/mdolab/pyoptsparse) to include installation bug fixes for use with [WISDEM](https://github.com/WISDEM/WISDEM/).
+
 pyOptSparse - PYthon OPTimization (Sparse) Framework
 ====================================================
 

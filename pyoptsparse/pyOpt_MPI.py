@@ -19,6 +19,7 @@ History
 '''
 from __future__ import print_function
 import warnings
+import dill
 class COMM(object):
     def __init__(self):
         self.rank = 0
@@ -41,7 +42,8 @@ class myMPI(object):
         self.SUM = 'SUM'
         self.LOR = 'OR'
 try:
-    from mpi4py import MPI
+    import mpi4py.MPI as MPI
+    MPI.pickle.__init__(dill.dumps, dill.loads)
 except:
     warn = 'mpi4py could not be imported. mpi4py is required to use\
  the parallel gradient analysis and parallel objective analysis for\

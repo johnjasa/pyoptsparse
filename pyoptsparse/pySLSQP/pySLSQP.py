@@ -278,7 +278,7 @@ class SLSQP(Optimizer):
         else:  # We are not on the root process so go into waiting loop:
             self._waitLoop()
             sol = None
-
+            
         # Communication solution and return
         sol = self._communicateSolution(sol)
 

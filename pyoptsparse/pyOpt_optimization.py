@@ -886,7 +886,8 @@ class Optimization(object):
         xoffset = []
         for dvGroup in self.variables:
             for var in self.variables[dvGroup]:
-                xoffset.append(var.offset)
+                if var.type == 'c':
+                    xoffset.append(var.offset)
         self.xOffset = numpy.array(xoffset)
 
         # --------------------------------------
@@ -1500,7 +1501,7 @@ class Optimization(object):
             # end for (dvGroup in constraint)
             ii += con.ncon
         # end for (constraint loop)
-
+        
         # now flatten all the data into a single array
         data = numpy.concatenate(data).ravel()
         row = numpy.concatenate(row).ravel()
